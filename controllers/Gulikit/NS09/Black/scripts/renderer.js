@@ -265,13 +265,13 @@ function checkGamepad() {
         if (isVendorProductMatch(vendorId, productId, "057e", "2009")) {
             handleSwitch(gamepad);
             detectedMode = "Switch";
-        } else if (isVendorProductMatch(vendorId, productId, "045e", "028e")) {
-            handle360(gamepad);
-            detectedMode = "360";
+        } else if (isVendorProductMatch(vendorId, productId, "045e", "028e") | isVendorProductMatch(vendorId, productId, "045e", "02e0")) {
+            handleXbox(gamepad);
+            detectedMode = "XBox";
         } else if (isVendorProductMatch(vendorId, productId, "0079", "181c")) {
             handleAndroid(gamepad);
             detectedMode = "Android";
-        } else if (isVendorProductMatch(vendorId, productId, "0079", "0122")) {
+        } else if (isVendorProductMatch(vendorId, productId, "0079", "0122") | isVendorProductMatch(vendorId, productId, "1949", "0402")) {
             handleDX(gamepad);
             detectedMode = "DX";
         } else {
@@ -373,7 +373,7 @@ function handleSwitch(gamepad) {
     updateDPadLeftButton(isDPadLeftPressed);
 }
 
-function handle360(gamepad) {
+function handleXbox(gamepad) {
     // Check Left stick
     const LeftxAxisValue = gamepad.axes[0];
     const LeftyAxisValue = gamepad.axes[1];
