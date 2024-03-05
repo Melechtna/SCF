@@ -6,6 +6,7 @@ const yButtonImage = document.getElementById('y-button');
 const startButtonImage = document.getElementById('start-button');
 const selectButtonImage = document.getElementById('select-button');
 const homeButtonImage = document.getElementById('home-button');
+const captureButtonImage = document.getElementById('capture-button');
 const leftStickImage = document.getElementById('left-stick');
 const rightStickImage = document.getElementById('right-stick');
 const leftTriggerImage = document.getElementById('left-trigger');
@@ -79,15 +80,6 @@ function updateSelectButtonImage(isPressed) {
         selectButtonImage.src = 'images/SelectP.png';
     } else {
         selectButtonImage.src = 'images/Select.png';
-    }
-}
-
-// Function to update image based on Home button state
-function updateHomeButtonImage(isPressed) {
-    if (isPressed) {
-        homeButtonImage.src = 'images/HomeP.png';
-    } else {
-        homeButtonImage.src = 'images/Home.png';
     }
 }
 
@@ -239,8 +231,8 @@ function updateRightStickPressedState(isPressed) {
      if (gamepad) {
 
          // Replace these values with the actual vendor and product IDs of your working controller
-         const desiredVendorId = "045e";
-         const desiredProductId = "028e";
+         const desiredVendorId = "0079";
+         const desiredProductId = "181c";
 
          // Extract vendor and product information from the id string
          const match = /Vendor: (\w+) Product: (\w+)/.exec(gamepad.id);
@@ -261,6 +253,10 @@ function updateRightStickPressedState(isPressed) {
              const RightxAxisValue = gamepad.axes[2];
              const RightyAxisValue = gamepad.axes[3];
 
+             // Check DPad
+             const DxAxisValue = gamepad.axes[6];
+             const DyAxisValue = gamepad.axes[7];
+
              // Update left stick position based on joystick input
              updateLeftStickPosition(LeftxAxisValue, LeftyAxisValue);
 
@@ -268,27 +264,27 @@ function updateRightStickPressedState(isPressed) {
              updateRightStickPosition(RightxAxisValue, RightyAxisValue);
 
              // Check left stick press
-             const isLeftStickButtonPressed = gamepad.buttons[10].pressed;
+             const isLeftStickButtonPressed = gamepad.buttons[13].pressed;
              updateLeftStickPressedState(isLeftStickButtonPressed);
 
              // Check right stick press
-             const isRightStickButtonPressed = gamepad.buttons[11].pressed;
+             const isRightStickButtonPressed = gamepad.buttons[14].pressed;
              updateRightStickPressedState(isRightStickButtonPressed);
 
              // Check left bumper
-             const leftBumperValue = gamepad.buttons[4].pressed;
+             const leftBumperValue = gamepad.buttons[6].pressed;
              updateLeftBumperImage(leftBumperValue);
 
              // Check left trigger
-             const leftTriggerValue = gamepad.axes[5] || gamepad.buttons[6].value;
+             const leftTriggerValue = gamepad.axes[5] || gamepad.buttons[8].value;
              updateLeftTriggerImage(leftTriggerValue);
 
              // Check right bumper
-             const rightBumperValue = gamepad.buttons[5].pressed;
+             const rightBumperValue = gamepad.buttons[7].pressed;
              updateRightBumperImage(rightBumperValue);
 
              // Check right trigger
-             const rightTriggerValue = gamepad.axes[4] || gamepad.buttons[7].value;
+             const rightTriggerValue = gamepad.axes[4] || gamepad.buttons[9].value;
              updateRightTriggerImage(rightTriggerValue);
 
              // Check A button
@@ -300,40 +296,35 @@ function updateRightStickPressedState(isPressed) {
              updateBButtonImage(isBButtonPressed);
 
              // Check X button
-             const isXButtonPressed = gamepad.buttons[3].pressed;
+             const isXButtonPressed = gamepad.buttons[4].pressed;
              updateXButtonImage(isXButtonPressed);
 
              // Check Y button
-             const isYButtonPressed = gamepad.buttons[2].pressed;
+             const isYButtonPressed = gamepad.buttons[3].pressed;
              updateYButtonImage(isYButtonPressed);
 
              // Check Start button
-             const isStartButtonPressed = gamepad.buttons[9].pressed;
+             const isStartButtonPressed = gamepad.buttons[11].pressed;
              updateStartButtonImage(isStartButtonPressed);
 
              // Check Select button
-             const isSelectButtonPressed = gamepad.buttons[8].pressed;
+             const isSelectButtonPressed = gamepad.buttons[10].pressed;
              updateSelectButtonImage(isSelectButtonPressed);
 
-             // Check Home button
-             const isHomeButtonPressed = gamepad.buttons[16].pressed;
-             updateHomeButtonImage(isHomeButtonPressed);
-
              // Check D-pad Up button
-             const isDPadUpPressed = gamepad.buttons[12].pressed;
-             updateDPadUpButton(isDPadUpPressed);
+             updateDPadUpButton(DyAxisValue === -1);
 
              // Check D-pad Right button
-             const isDPadRightPressed = gamepad.buttons[15].pressed;
-             updateDPadRightButton(isDPadRightPressed);
+             updateDPadRightButton(DxAxisValue === 1 );
+
 
              // Check D-pad Down button
-             const isDPadDownPressed = gamepad.buttons[13].pressed;
-             updateDPadDownButton(isDPadDownPressed);
+             updateDPadDownButton(DyAxisValue === 1 );
+
 
              // Check D-pad Left button
-             const isDPadLeftPressed = gamepad.buttons[14].pressed;
-             updateDPadLeftButton(isDPadLeftPressed);
+             updateDPadLeftButton(DxAxisValue === -1 );
+
          }
      }
 

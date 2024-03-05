@@ -194,7 +194,6 @@ function checkGamepad() {
     const gamepad = gamepads.find(pad => pad !== null);
 
     if (gamepad) {
-        console.log("Gamepad found:", gamepad);
 
         // Replace these values with the actual vendor and product IDs of your working controller
         const desiredVendorId = "0079";

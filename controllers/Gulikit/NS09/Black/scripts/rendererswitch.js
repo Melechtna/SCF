@@ -6,6 +6,7 @@ const yButtonImage = document.getElementById('y-button');
 const startButtonImage = document.getElementById('start-button');
 const selectButtonImage = document.getElementById('select-button');
 const homeButtonImage = document.getElementById('home-button');
+const captureButtonImage = document.getElementById('capture-button');
 const leftStickImage = document.getElementById('left-stick');
 const rightStickImage = document.getElementById('right-stick');
 const leftTriggerImage = document.getElementById('left-trigger');
@@ -88,6 +89,15 @@ function updateHomeButtonImage(isPressed) {
         homeButtonImage.src = 'images/HomeP.png';
     } else {
         homeButtonImage.src = 'images/Home.png';
+    }
+}
+
+// Function to update image based on Home button state
+function updateCaptureButtonImage(isPressed) {
+    if (isPressed) {
+        captureButtonImage.src = 'images/CaptureP.png';
+    } else {
+        captureButtonImage.src = 'images/Capture.png';
     }
 }
 
@@ -239,8 +249,8 @@ function updateRightStickPressedState(isPressed) {
      if (gamepad) {
 
          // Replace these values with the actual vendor and product IDs of your working controller
-         const desiredVendorId = "045e";
-         const desiredProductId = "028e";
+         const desiredVendorId = "057e";
+         const desiredProductId = "2009";
 
          // Extract vendor and product information from the id string
          const match = /Vendor: (\w+) Product: (\w+)/.exec(gamepad.id);
@@ -318,6 +328,10 @@ function updateRightStickPressedState(isPressed) {
              // Check Home button
              const isHomeButtonPressed = gamepad.buttons[16].pressed;
              updateHomeButtonImage(isHomeButtonPressed);
+
+             // Check Capture button
+             const isCaptureButtonPressed = gamepad.buttons[17].pressed;
+             updateCaptureButtonImage(isCaptureButtonPressed);
 
              // Check D-pad Up button
              const isDPadUpPressed = gamepad.buttons[12].pressed;
