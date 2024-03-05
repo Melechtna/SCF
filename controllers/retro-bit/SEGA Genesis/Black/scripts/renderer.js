@@ -204,8 +204,6 @@ function checkGamepad() {
         const vendorId = match ? match[1] : undefined;
         const productId = match ? match[2] : undefined;
 
-        console.log("Vendor ID:", vendorId, "Product ID:", productId);
-
         // Check if the ID matches the desired controller
         if (vendorId === desiredVendorId && productId === desiredProductId) {
             console.log("Matching controller detected!");
