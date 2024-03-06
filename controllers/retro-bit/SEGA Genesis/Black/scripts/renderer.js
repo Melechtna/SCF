@@ -206,7 +206,6 @@ function checkGamepad() {
 
         // Check if the ID matches the desired controller
         if (vendorId === desiredVendorId && productId === desiredProductId) {
-            console.log("Matching controller detected!");
 
             // Check DPad
             const XAxisValue = gamepad.axes[0];

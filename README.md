@@ -20,9 +20,9 @@ The Manufacturer folder(s) will contain a subfolder with the controllers respect
 
 The Colors folder(s), if applicable, will contain the coloration for each respective coloration for that respective model for that respective controller. If this is the end of the line (EotL), the index.html will go in here.
 
-## icons, images, and scripts
+## images, and scripts
 
-These three folders will be the ones that actually contain the "meat" of what makes up the controller itself, the icons folder will contain one, or multiple (to yours or my preference), icons for the "site" to use. The images folder is what actually makes up your controller, there will be a base image, and an image for each and every button that makes up the controller. It's usually best to start with the base and any floating buttons you may need to display the entire controller. It's best if you can keep everything "small", by this I mean, if you can get away with using less space, do so, but every image needs to be the same resolution, but the majority of each buttons canvas should be transparent, see premade controllers for examples.
+These two folders will be the ones that actually contain the "meat" of what makes up the controller itself, the images folder is what actually makes up your controller, as well as the icon for the site, there will be a base image, and an image for each and every button that makes up the controller. It's usually best to start with the base and any floating buttons you may need to display the entire controller. It's best if you can keep everything "small", by this I mean, if you can get away with using less space, do so, but every image needs to be the same resolution, but the majority of each buttons canvas should be transparent, see premade controllers for examples.
 
 You will also want to create pressed states for the buttons, see any of the premade controllers for examples which are designated with the ending letter P, before the png extension. This allows the code to be efficent, by simply swapping these images out. It also makes it very easy for anyone to simply change the color of the pressed state with a fill tool in just about any image editor imaginable, to get their desired color. Lastly is the scripts folder, the only thing that goes here is renderer.js, this script does all the heavy lifting.
 
