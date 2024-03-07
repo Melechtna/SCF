@@ -1,20 +1,14 @@
 //Button List
 const aButtonImage = document.getElementById('a-button');
 const bButtonImage = document.getElementById('b-button');
-const cButtonImage = document.getElementById('c-button');
 const xButtonImage = document.getElementById('x-button');
 const yButtonImage = document.getElementById('y-button');
-const zButtonImage = document.getElementById('z-button');
 const startButtonImage = document.getElementById('start-button');
-const selectButtonImage = document.getElementById('mode-button');
+const selectButtonImage = document.getElementById('select-button');
 const leftBumperImage = document.getElementById('left-bumper');
 const rightBumperImage = document.getElementById('right-bumper');
 const dPadUpImage = document.getElementById('dpad-up');
-const dPadUpRightImage = document.getElementById('dpad-up-right');
-const dPadUpLeftImage = document.getElementById('dpad-up-left');
 const dPadRightImage = document.getElementById('dpad-right');
-const dPadDownLeftImage = document.getElementById('dpad-down-left');
-const dPadDownRightImage = document.getElementById('dpad-down-right');
 const dPadDownImage = document.getElementById('dpad-down');
 const dPadLeftImage = document.getElementById('dpad-left');
 
@@ -41,15 +35,6 @@ function updateBButtonImage(isPressed) {
     }
 }
 
-// Function to update image based on B button state
-function updateCButtonImage(isPressed) {
-    if (isPressed) {
-        cButtonImage.src = 'images/CP.png';
-    } else {
-        cButtonImage.src = 'images/C.png';
-    }
-}
-
 // Function to update image based on X button state
 function updateXButtonImage(isPressed) {
     if (isPressed) {
@@ -65,15 +50,6 @@ function updateYButtonImage(isPressed) {
         yButtonImage.src = 'images/YP.png';
     } else {
         yButtonImage.src = 'images/Y.png';
-    }
-}
-
-// Function to update image based on Z button state
-function updateZButtonImage(isPressed) {
-    if (isPressed) {
-        zButtonImage.src = 'images/ZP.png';
-    } else {
-        zButtonImage.src = 'images/Z.png';
     }
 }
 
@@ -122,30 +98,12 @@ function updateDPadUpButton(isPressed) {
     }
 }
 
-// Function to update D-pad Up Right button state
-function updateDPadUpRightButton(isPressed) {
-    if (isPressed) {
-        dPadUpRightImage.src = 'images/DURP.png';
-    } else {
-        dPadUpRightImage.src = 'images/DUR.png';
-    }
-}
-
 // Function to update D-pad Right button state
 function updateDPadRightButton(isPressed) {
     if (isPressed) {
         dPadRightImage.src = 'images/DRP.png';
     } else {
         dPadRightImage.src = 'images/DR.png';
-    }
-}
-
-// Function to update D-pad Down Right button state
-function updateDPadDownRightButton(isPressed) {
-    if (isPressed) {
-        dPadDownRightImage.src = 'images/DDRP.png';
-    } else {
-        dPadDownRightImage.src = 'images/DDR.png';
     }
 }
 
@@ -158,30 +116,12 @@ function updateDPadDownButton(isPressed) {
     }
 }
 
-// Function to update D-pad Up Left button state
-function updateDPadUpLeftButton(isPressed) {
-    if (isPressed) {
-        dPadUpLeftImage.src = 'images/DULP.png';
-    } else {
-        dPadUpLeftImage.src = 'images/DUL.png';
-    }
-}
-
 // Function to update D-pad Left button state
 function updateDPadLeftButton(isPressed) {
     if (isPressed) {
         dPadLeftImage.src = 'images/DLP.png';
     } else {
         dPadLeftImage.src = 'images/DL.png';
-    }
-}
-
-// Function to update D-pad Down Left button state
-function updateDPadDownLeftButton(isPressed) {
-    if (isPressed) {
-        dPadDownLeftImage.src = 'images/DDLP.png';
-    } else {
-        dPadDownLeftImage.src = 'images/DDL.png';
     }
 }
 
@@ -196,8 +136,8 @@ function checkGamepad() {
     if (gamepad) {
 
         // Replace these values with the actual vendor and product IDs of your working controller
-        const desiredVendorId = "0079";
-        const desiredProductId = "0011";
+        const desiredVendorId = "12bd";
+        const desiredProductId = "d015";
 
         // Extract vendor and product information from the id string
         const match = /Vendor: (\w+) Product: (\w+)/.exec(gamepad.id);
@@ -212,11 +152,11 @@ function checkGamepad() {
             const YAxisValue = gamepad.axes[1];
 
             // Check left bumper
-            const leftBumperValue = gamepad.buttons[6].pressed;
+            const leftBumperValue = gamepad.buttons[4].pressed;
             updateLeftBumperImage(leftBumperValue);
 
             // Check right bumper
-            const rightBumperValue = gamepad.buttons[7].pressed;
+            const rightBumperValue = gamepad.buttons[5].pressed;
             updateRightBumperImage(rightBumperValue);
 
             // Check A button
@@ -227,10 +167,6 @@ function checkGamepad() {
             const isBButtonPressed = gamepad.buttons[2].pressed;
             updateBButtonImage(isBButtonPressed);
 
-            // Check C button
-            const isCButtonPressed = gamepad.buttons[4].pressed;
-            updateCButtonImage(isCButtonPressed);
-
             // Check X button
             const isXButtonPressed = gamepad.buttons[0].pressed;
             updateXButtonImage(isXButtonPressed);
@@ -238,10 +174,6 @@ function checkGamepad() {
             // Check Y button
             const isYButtonPressed = gamepad.buttons[3].pressed;
             updateYButtonImage(isYButtonPressed);
-
-            // Check Z button
-            const isZButtonPressed = gamepad.buttons[5].pressed;
-            updateZButtonImage(isZButtonPressed);
 
             // Check Start button
             const isStartButtonPressed = gamepad.buttons[9].pressed;
@@ -252,28 +184,17 @@ function checkGamepad() {
             updateSelectButtonImage(isSelectButtonPressed);
 
             // Check D-pad Up button
-            updateDPadUpButton(YAxisValue === -1 && XAxisValue !== 1  && XAxisValue !== -1);
-
-            // Check D-pad Up Right button
-            updateDPadUpRightButton(XAxisValue === 1 && YAxisValue === -1);
+            updateDPadUpButton(YAxisValue === -1);
 
             // Check D-pad Right button
-            updateDPadRightButton(XAxisValue === 1 && YAxisValue !== -1 && YAxisValue !== 1);
-
-            // Check D-pad Down Right button
-            updateDPadDownRightButton(XAxisValue === 1 && YAxisValue === 1);
+            updateDPadRightButton(XAxisValue === 1);
 
             // Check D-pad Down button
-            updateDPadDownButton(YAxisValue === 1 && XAxisValue !== 1  && XAxisValue !== -1);
-
-            // Check D-pad Down Left button
-            updateDPadDownLeftButton(XAxisValue === -1 && YAxisValue === 1);
+            updateDPadDownButton(YAxisValue === 1);
 
             // Check D-pad Left button
-            updateDPadLeftButton(XAxisValue === -1 && YAxisValue !== -1 && YAxisValue !== 1);
+            updateDPadLeftButton(XAxisValue === -1);
 
-            // Check D-pad Up Left button
-            updateDPadUpLeftButton(XAxisValue === -1 && YAxisValue === -1);
         }
     }
 
