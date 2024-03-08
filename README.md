@@ -6,7 +6,7 @@ The code is as human readable as possible, so that it should be as simple as pos
 
 # Structure
 
-The sctructure should be as follows, controller folder, manufacturer folder, model folder, color folder (if applicable), icons, images, and scripts folder.
+The sctructure should be as follows, controller folder, manufacturer folder, model folder, color folder (if applicable), images, and scripts folder.
 
 ## Controllers
 
