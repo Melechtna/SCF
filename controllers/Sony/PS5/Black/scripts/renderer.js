@@ -32,108 +32,108 @@ function handleGamepadConnected(event) {
 // Function to update image based on A button state
 function updateCrossButtonImage(isPressed) {
     if (isPressed) {
-        crossButtonImage.src = 'images/CrossP.png';
+        crossButtonImage.src = 'images/Pushed/Cross.png';
     } else {
-        crossButtonImage.src = 'images/Cross.png';
+        crossButtonImage.src = 'images/Buttons/Cross.png';
     }
 }
 
 // Function to update image based on Circle button state
 function updateCircleButtonImage(isPressed) {
     if (isPressed) {
-        circleButtonImage.src = 'images/CircleP.png';
+        circleButtonImage.src = 'images/Pushed/Circle.png';
     } else {
-        circleButtonImage.src = 'images/Circle.png';
+        circleButtonImage.src = 'images/Buttons/Circle.png';
     }
 }
 
 // Function to update image based on Triangle button state
 function updateTriangleButtonImage(isPressed) {
     if (isPressed) {
-        triangleButtonImage.src = 'images/TriangleP.png';
+        triangleButtonImage.src = 'images/Pushed/Triangle.png';
     } else {
-        triangleButtonImage.src = 'images/Triangle.png';
+        triangleButtonImage.src = 'images/Buttons/Triangle.png';
     }
 }
 
 // Function to update image based on Square button state
 function updateSquareButtonImage(isPressed) {
     if (isPressed) {
-        squareButtonImage.src = 'images/SquareP.png';
+        squareButtonImage.src = 'images/Pushed/Square.png';
     } else {
-        squareButtonImage.src = 'images/Square.png';
+        squareButtonImage.src = 'images/Buttons/Square.png';
     }
 }
 
 // Function to update image based on Menu button state
 function updateMenuButtonImage(isPressed) {
     if (isPressed) {
-        menuButtonImage.src = 'images/MenuP.png';
+        menuButtonImage.src = 'images/Pushed/Menu.png';
     } else {
-        menuButtonImage.src = 'images/Menu.png';
+        menuButtonImage.src = 'images/Buttons/Menu.png';
     }
 }
 
 // Function to update image based on Share button state
 function updateShareButtonImage(isPressed) {
     if (isPressed) {
-        shareButtonImage.src = 'images/ShareP.png';
+        shareButtonImage.src = 'images/Pushed/Share.png';
     } else {
-        shareButtonImage.src = 'images/Share.png';
+        shareButtonImage.src = 'images/Buttons/Share.png';
     }
 }
 
 // Function to update image based on PS button state
 function updatePSButtonImage(isPressed) {
     if (isPressed) {
-        psButtonImage.src = 'images/PSP.png';
+        psButtonImage.src = 'images/Pushed/PS.png';
     } else {
-        psButtonImage.src = 'images/PS.png';
+        psButtonImage.src = 'images/Buttons/PS.png';
     }
 }
 
 // Function to update image based on TP button state
 function updateTPButtonImage(isPressed) {
     if (isPressed) {
-        tpButtonImage.src = 'images/TPP.png';
+        tpButtonImage.src = 'images/Pushed/T.png';
     } else {
-        tpButtonImage.src = 'images/TP.png';
+        tpButtonImage.src = 'images/Buttons/T.png';
     }
 }
 
 // Function to update D-pad Up button state
 function updateDPadUpButton(isPressed) {
     if (isPressed) {
-        dPadUpImage.src = 'images/DUP.png';
+        dPadUpImage.src = 'images/Pushed/DU.png';
     } else {
-        dPadUpImage.src = 'images/DU.png';
+        dPadUpImage.src = 'images/Buttons/DU.png';
     }
 }
 
 // Function to update D-pad Right button state
 function updateDPadRightButton(isPressed) {
     if (isPressed) {
-        dPadRightImage.src = 'images/DRP.png';
+        dPadRightImage.src = 'images/Pushed/DR.png';
     } else {
-        dPadRightImage.src = 'images/DR.png';
+        dPadRightImage.src = 'images/Buttons/DR.png';
     }
 }
 
 // Function to update D-pad Down button state
 function updateDPadDownButton(isPressed) {
     if (isPressed) {
-        dPadDownImage.src = 'images/DDP.png';
+        dPadDownImage.src = 'images/Pushed/DD.png';
     } else {
-        dPadDownImage.src = 'images/DD.png';
+        dPadDownImage.src = 'images/Buttons/DD.png';
     }
 }
 
 // Function to update D-pad Left button state
 function updateDPadLeftButton(isPressed) {
     if (isPressed) {
-        dPadLeftImage.src = 'images/DLP.png';
+        dPadLeftImage.src = 'images/Pushed/DL.png';
     } else {
-        dPadLeftImage.src = 'images/DL.png';
+        dPadLeftImage.src = 'images/Buttons/DL.png';
     }
 }
 
@@ -162,9 +162,9 @@ function updateRightStickPosition(x, y) {
 // Function to update image based on Left bumper state
 function updateLeftBumperImage(isPressed) {
     if (isPressed) {
-        leftBumperImage.src = 'images/L1P.png';
+        leftBumperImage.src = 'images/Pushed/L1.png';
     } else {
-        leftBumperImage.src = 'images/L1.png';
+        leftBumperImage.src = 'images/Buttons/L1.png';
     }
 }
 
@@ -176,12 +176,12 @@ function updateLeftTriggerImage(value) {
     // Check if the trigger is pressed
     if (value > threshold) {
         if (!isLeftTriggerPressed) {
-            leftTriggerImage.src = 'images/L2P.png';
+            leftTriggerImage.src = 'images/Pushed/L2.png';
             isLeftTriggerPressed = true;
         }
     } else {
         if (isLeftTriggerPressed) {
-            leftTriggerImage.src = 'images/L2.png';
+            leftTriggerImage.src = 'images/Buttons/L2.png';
             isLeftTriggerPressed = false;
         }
     }
@@ -190,9 +190,9 @@ function updateLeftTriggerImage(value) {
 // Function to update image based on Right bumper state
 function updateRightBumperImage(isPressed) {
     if (isPressed) {
-        rightBumperImage.src = 'images/R1P.png';
+        rightBumperImage.src = 'images/Pushed/R1.png';
     } else {
-        rightBumperImage.src = 'images/R1.png';
+        rightBumperImage.src = 'images/Buttons/R1.png';
     }
 }
 
@@ -204,12 +204,12 @@ function updateRightTriggerImage(value) {
     // Check if the trigger is pressed
     if (value > threshold) {
         if (!isRightTriggerPressed) {
-            rightTriggerImage.src = 'images/R2P.png';
+            rightTriggerImage.src = 'images/Pushed/R2.png';
             isRightTriggerPressed = true;
         }
     } else {
         if (isRightTriggerPressed) {
-            rightTriggerImage.src = 'images/R2.png';
+            rightTriggerImage.src = 'images/Buttons/R2.png';
             isRightTriggerPressed = false;
         }
     }
@@ -219,10 +219,10 @@ function updateRightTriggerImage(value) {
 // Function to update left stick image based on pressed state
 function updateLeftStickPressedState(isPressed) {
     if (isPressed) {
-        leftStickImage.src = 'images/LSP.png';
+        leftStickImage.src = 'images/Pushed/LS.png';
         isLeftStickPressed = true;
     } else {
-        leftStickImage.src = 'images/LS.png';
+        leftStickImage.src = 'images/Buttons/LS.png';
         isLeftStickPressed = false;
     }
 }
@@ -230,10 +230,10 @@ function updateLeftStickPressedState(isPressed) {
 // Function to update right stick image based on pressed state
 function updateRightStickPressedState(isPressed) {
     if (isPressed) {
-        rightStickImage.src = 'images/RSP.png';
+        rightStickImage.src = 'images/Pushed/RS.png';
         isRightStickPressed = true;
     } else {
-        rightStickImage.src = 'images/RS.png';
+        rightStickImage.src = 'images/Buttons/RS.png';
         isRightStickPressed = false;
     }
 }
@@ -350,3 +350,64 @@ function checkGamepad() {
 
 // Listen for the gamepadconnected event
 window.addEventListener('gamepadconnected', handleGamepadConnected);
+
+// Debugging Console
+document.addEventListener("DOMContentLoaded", function () {
+    const isDebuggingEnabled = document.body.getAttribute("debug") === "true";
+
+    if (!isDebuggingEnabled) {
+        console.log("Debugging disabled.");
+        return; // Stop execution if debugging is off
+    }
+
+    console.log("Debugging enabled. Setting up debug panel...");
+
+    // Create and insert the debug panel dynamically
+    const debugOutput = document.createElement("div");
+    debugOutput.id = "debug-output";
+    debugOutput.style.position = "fixed";
+    debugOutput.style.top = "0";
+    debugOutput.style.right = "0";
+    debugOutput.style.width = "30%";
+    debugOutput.style.height = "100%";
+    debugOutput.style.background = "black";
+    debugOutput.style.color = "white";
+    debugOutput.style.padding = "10px";
+    debugOutput.style.fontFamily = "monospace";
+    debugOutput.style.whiteSpace = "pre-wrap";
+    debugOutput.style.overflowY = "auto";
+    document.body.appendChild(debugOutput);
+
+    function logGamepadDetails(gamepad) {
+        const match = gamepad.id.match(/(.+?) \(.*?Vendor: (\w+) Product: (\w+)\)/);
+        let formattedId = match ? match[1] : gamepad.id;
+        let vendorId = match ? match[2] : "Unknown";
+        let productId = match ? match[3] : "Unknown";
+
+        return `${formattedId}\nVendor: ${vendorId} Product: ${productId}\nIndex: ${gamepad.index}\nButtons: ${gamepad.buttons.length}\nAxes: ${gamepad.axes.length}\n` +
+        gamepad.buttons.map((button, index) => `Button ${index}: ${button.pressed} (Value: ${button.value})`).join("\n") +
+        "\n" +
+        gamepad.axes.map((axis, index) => `Axis ${index}: ${axis}`).join("\n");
+    }
+
+    function updateGamepadInfo() {
+        const gamepads = navigator.getGamepads();
+        debugOutput.textContent = Array.from(gamepads)
+        .filter(g => g) // Remove null entries
+        .map(logGamepadDetails)
+        .join("\n\n");
+    }
+
+    // Poll every 250ms instead of every frame
+    setInterval(updateGamepadInfo, 30);
+
+    window.addEventListener("gamepadconnected", (event) => {
+        console.log("Gamepad connected:", event.gamepad.id);
+        updateGamepadInfo();
+    });
+
+    window.addEventListener("gamepaddisconnected", (event) => {
+        console.log("Gamepad disconnected:", event.gamepad.id);
+        updateGamepadInfo();
+    });
+});
