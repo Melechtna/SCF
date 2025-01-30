@@ -32,6 +32,9 @@ For the most part, the process to create the images is quite simple, it's just t
 
 Where it may get a bit challenging, is properly editing the index.html to properly reflect the controller, its icon, and pointing it towards the correct button images to pass to the renderer. The renderer itself is where it gets the most complicated, and there's no easy "do this" recommendation, as it will largely depend on the controller itself and what's required to make it work. Your best bet is to look at the pre-made examples, and work things out yourself, or, if you can either send me the controller, or are more willing to work with me on debugging it, I may be able to do so myself given the time.
 
+# Debugging
+I have recently added, specifically in the GameSir Tarantula Pro's Renderer.js and Index.html, a simple true false toggle debug mode. This will help not only myself add new controllers, but anyone else wishing to addon to this framework. It provides every ounce of data you need to setup the controller using the existing frameworks code. At this point, you could use the GameSir as a base for practically anything, and the debug info to then properly configure whatever else you want to.
+
 # Running
 
 Simply locate the folder of the controller you want, and open index.html found in that controllers respective EotL, in any web browser that has html5-gamepad enabled, which should be most besides Firefox from my experience, this of course is subject to change, as Firefox may add this later.
