@@ -1,0 +1,55 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nintendo Joycon(s) (Red and Blue)</title>
+    <link rel="icon" type="image/png" href="images/Icon.png">
+    <style>
+        body {
+        background-color: #00FF00;
+        margin: 0;
+        overflow: hidden;
+        }
+
+        .image-container {
+        position: relative;
+        }
+
+        .image-container img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        }
+
+        .overlay-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        }
+    </style>
+</head>
+</head>
+<body>
+    <div class="image-container">
+        <img id="base" src="images/Base.png" alt="Base">
+        <img id="a-button" src="images/Buttons/A.png" alt="A Button">
+        <img id="b-button" src="images/Buttons/B.png" alt="B Button">
+        <img id="x-button" src="images/Buttons/X.png" alt="X Button">
+        <img id="y-button" src="images/Buttons/Y.png" alt="Y Button">
+        <img id="plus-button" src="images/Buttons/Plus.png" alt="Plus Button">
+        <img id="home-button" src="images/Buttons/Home.png" alt="Home Button">
+        <img id="right-stick" src="images/Buttons/RS.png" alt="Right Stick">
+        <img id="right-bumper" src="images/Buttons/R.png" alt="Right Bumper">
+        <img id="right-trigger" src="images/Buttons/ZR.png" alt="Right Trigger">
+        <img id="sr-right" src="images/Buttons/SRR.png" alt="SR Right">
+        <img id="sl-right" src="images/Buttons/SLR.png" alt="SL Right">
+    </div>
+    <body debug="true">
+    <script src="scripts/renderer.js"></script>
+    </body>
+</body>
+</html>
+

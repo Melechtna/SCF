@@ -335,7 +335,7 @@ function checkGamepad() {
         if (isVendorProductMatch(vendorId, productId, "057e", "2009")) {
             handleSwitch(gamepad);
             detectedMode = "Switch";
-        } else if (isVendorProductMatch(vendorId, productId, "3537", "103e")) {
+        } else if (isVendorProductMatch(vendorId, productId, "3537", "103e") | (isVendorProductMatch(vendorId, productId, "045e", "028e"))) {
             handleXbox(gamepad);
             detectedMode = "XBox";
         } else if (isVendorProductMatch(vendorId, productId, "054c", "05c4") | (isVendorProductMatch(vendorId, productId, "054c", "09cc"))) {

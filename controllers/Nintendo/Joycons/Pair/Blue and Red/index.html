@@ -1,0 +1,66 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nintendo Joycon(s) (Red and Blue)</title>
+    <link rel="icon" type="image/png" href="images/Icon.png">
+    <style>
+        body {
+        background-color: #00FF00;
+        margin: 0;
+        overflow: hidden;
+        }
+
+        .image-container {
+        position: relative;
+        }
+
+        .image-container img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        }
+
+        .overlay-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        }
+    </style>
+</head>
+</head>
+<body>
+    <div class="image-container">
+        <img id="base" src="images/Base.png" alt="Base">
+        <img id="a-button" src="images/Buttons/A.png" alt="A Button">
+        <img id="b-button" src="images/Buttons/B.png" alt="B Button">
+        <img id="x-button" src="images/Buttons/X.png" alt="X Button">
+        <img id="y-button" src="images/Buttons/Y.png" alt="Y Button">
+        <img id="plus-button" src="images/Buttons/Plus.png" alt="Plus Button">
+        <img id="minus-button" src="images/Buttons/Minus.png" alt="Minus Button">
+        <img id="home-button" src="images/Buttons/Home.png" alt="Home Button">
+        <img id="capture-button" src="images/Buttons/Capture.png" alt="Capture Button">
+        <img id="left-stick" src="images/Buttons/LS.png" alt="Left Stick">
+        <img id="right-stick" src="images/Buttons/RS.png" alt="Right Stick">
+        <img id="left-bumper" src="images/Buttons/L.png" alt="Left Bumper">
+        <img id="right-bumper" src="images/Buttons/R.png" alt="Right Bumper">
+        <img id="left-trigger" src="images/Buttons/ZL.png" alt="Left Trigger">
+        <img id="right-trigger" src="images/Buttons/ZR.png" alt="Right Trigger">
+        <img id="dpad-up" src="images/Buttons/DU.png" alt="DPad Up">
+        <img id="dpad-left" src="images/Buttons/DL.png" alt="DPad Left">
+        <img id="dpad-right" src="images/Buttons/DR.png" alt="DPad Right">
+        <img id="dpad-down" src="images/Buttons/DD.png" alt="DPad Down">
+        <img id="sl-left" src="images/Buttons/SLL.png" alt="SL Left">
+        <img id="sr-left" src="images/Buttons/SRL.png" alt="SR Left">
+        <img id="sr-right" src="images/Buttons/SRR.png" alt="SR Right">
+        <img id="sl-right" src="images/Buttons/SLR.png" alt="SL Right">
+    </div>
+    <body debug="false">
+    <script src="scripts/renderer.js"></script>
+    </body>
+</body>
+</html>
+
