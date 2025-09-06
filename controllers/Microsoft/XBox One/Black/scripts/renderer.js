@@ -289,7 +289,8 @@ function checkGamepad() {
         const productId = match ? match[2] : undefined;
 
         // Check if the ID matches the desired controller
-        if (vendorId === desiredVendorId && productId === desiredProductId) {
+        if ((vendorId === desiredVendorId && productId === desiredProductId) ||
+            gamepad.id.includes('XInput STANDARD GAMEPAD')) {
 
             // Check Left stick
             const LeftxAxisValue = gamepad.axes[0];
