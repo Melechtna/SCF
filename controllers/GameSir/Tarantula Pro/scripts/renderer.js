@@ -341,6 +341,9 @@ function checkGamepad() {
         } else if (isVendorProductMatch(vendorId, productId, "054c", "05c4") | (isVendorProductMatch(vendorId, productId, "054c", "09cc"))) {
             handlePS4(gamepad);
             detectedMode = "PS4";
+        } else if (isVendorProductMatch(vendorId, productId, "2345", "e008") | (isVendorProductMatch(vendorId, productId, "054c", "09cc"))) {
+            handleGamSir(gamepad);
+            detectedMode = "GameSir";
         } else {
             // Do nothing if no configuration matches
         }
@@ -614,6 +617,88 @@ function handlePS4(gamepad) {
     // Check D-pad Left button
     const isDPadLeftButtonPressed = gamepad.buttons[14].pressed;
     updateDPadLeftButton(isDPadLeftButtonPressed);
+}
+
+function handleGamSir(gamepad) {
+    // Check Left stick
+    const LeftxAxisValue = gamepad.axes[0];
+    const LeftyAxisValue = gamepad.axes[1];
+
+    // Check Right stick
+    const RightxAxisValue = gamepad.axes[2];
+    const RightyAxisValue = gamepad.axes[3];
+
+    // Check DPad
+    const DxAxisValue = gamepad.axes[6];
+    const DyAxisValue = gamepad.axes[7];
+
+    // Update left stick position based on joystick input
+    updateLeftStickPosition(LeftxAxisValue, LeftyAxisValue);
+
+    // Update right stick position based on joystick input
+    updateRightStickPosition(RightxAxisValue, RightyAxisValue);
+
+    // Check left stick press
+    const isLeftStickButtonPressed = gamepad.buttons[13].pressed;
+    updateLeftStickPressedState(isLeftStickButtonPressed);
+
+    // Check right stick press
+    const isRightStickButtonPressed = gamepad.buttons[14].pressed;
+    updateRightStickPressedState(isRightStickButtonPressed);
+
+    // Check left bumper
+    const leftBumperValue = gamepad.buttons[6].pressed;
+    updateLeftBumperImage(leftBumperValue);
+
+    // Check left trigger
+    const leftTriggerValue = gamepad.axes[5];
+    updateLeftTriggerImage(leftTriggerValue);
+
+    // Check right bumper
+    const rightBumperValue = gamepad.buttons[7].pressed;
+    updateRightBumperImage(rightBumperValue);
+
+    // Check right trigger
+    const rightTriggerValue = gamepad.axes[4];
+    updateRightTriggerImage(rightTriggerValue);
+
+    // Check A button
+    const isAButtonPressed = gamepad.buttons[0].pressed;
+    updateAButtonImage(isAButtonPressed);
+
+    // Check B button
+    const isBButtonPressed = gamepad.buttons[1].pressed;
+    updateBButtonImage(isBButtonPressed);
+
+    // Check X button
+    const isXButtonPressed = gamepad.buttons[3].pressed;
+    updateXButtonImage(isXButtonPressed);
+
+    // Check Y button
+    const isYButtonPressed = gamepad.buttons[4].pressed;
+    updateYButtonImage(isYButtonPressed);
+
+    // Check Start button
+    const isStartButtonPressed = gamepad.buttons[11].pressed;
+    updateStartButtonImage(isStartButtonPressed);
+
+    // Check Select button
+    const isSelectButtonPressed = gamepad.buttons[10].pressed;
+    updateSelectButtonImage(isSelectButtonPressed);
+
+    // Check D-pad Up button
+    updateDPadUpButton(DyAxisValue === -1);
+
+    // Check D-pad Right button
+    updateDPadRightButton(DxAxisValue === 1 );
+
+
+    // Check D-pad Down button
+    updateDPadDownButton(DyAxisValue === 1 );
+
+
+    // Check D-pad Left button
+    updateDPadLeftButton(DxAxisValue === -1 );
 }
 
 // Listen for the gamepadconnected event
