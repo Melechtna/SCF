@@ -1,3 +1,5 @@
+### This repo is now archived in favor of its successor [SCF-Next](https://github.com/Melechtna/scf-next)
+
 # Simple Controller Framework (SCF)
 
 SCF, as it's name implies, is a framework written with the html5-gamepad API to allow you to create a standalone, green screen'd window that you can add to softwares like OBS so that your input can be displayed. The main reason I created this framework is two fold, one, to handle Flatpak issues where the controller can't be seen by the API, and two, so that you can easily import any controller you want, and have it look like your ACTUAL controller.
